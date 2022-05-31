@@ -1,0 +1,9 @@
+FROM --platform=linux/amd64 ubuntu:22.04
+
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libembree-dev libtbb-dev groff cmake build-essential
+
+COPY . /repo
+WORKDIR /repo/build
+RUN cmake ..
+RUN make -j8
