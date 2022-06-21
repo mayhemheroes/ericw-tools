@@ -1,6 +1,6 @@
-project: rnshah9/ericw-tools
-target: ericw-tools
+project: ericw-tools
+target: bspinfo
 
 cmds:
-  - cmd: /repo/build/bspinfo/bspinfo @@
+  - cmd: /repo/build/bspinfo/bspinfo /test.bsp
     filepath: /test.bsp
