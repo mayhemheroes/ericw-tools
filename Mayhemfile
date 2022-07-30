@@ -3,3 +3,4 @@ target: bspinfo
 
 cmds:
   - cmd: /bspinfo @@
+    filepath: /test.bsp
