@@ -1,12 +1,12 @@
-FROM --platform=linux/amd64 ubuntu:22.04 as builder
+FROM --platform=linux/amd64 ubuntu:24.04 AS builder
 
-RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libembree-dev libtbb-dev groff cmake build-essential
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    libembree-dev libtbb-dev groff cmake build-essential
 
 COPY . /repo
 WORKDIR /repo/build
 RUN cmake ..
 RUN make -j8
 
-FROM ubuntu:22.04 as package
+FROM ubuntu:24.04
 COPY --from=builder /repo/build/bspinfo/bspinfo /
