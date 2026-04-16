@@ -9,4 +9,6 @@ RUN cmake ..
 RUN make -j8
 
 FROM ubuntu:24.04
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    libtbb12 libembree4-4
 COPY --from=builder /repo/build/bspinfo/bspinfo /
