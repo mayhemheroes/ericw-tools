@@ -1,0 +1,4 @@
+project: ericw-tools
+target: bspinfo
+cmds:
+  - cmd: /bspinfo @@
