@@ -1,7 +1,7 @@
 FROM --platform=linux/amd64 ubuntu:24.04 AS builder
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    libembree-dev libtbb-dev groff cmake build-essential
+    libembree-dev libtbb-dev groff cmake build-essential git
 
 COPY . /repo
 WORKDIR /repo/build
