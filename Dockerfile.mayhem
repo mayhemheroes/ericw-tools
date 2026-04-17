@@ -4,6 +4,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     libembree-dev libtbb-dev groff cmake build-essential git
 
 COPY . /repo
+WORKDIR /repo
+RUN git submodule update --init --recursive
 WORKDIR /repo/build
 RUN cmake ..
 RUN make -j8
