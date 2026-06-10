@@ -1,0 +1,15 @@
+# .dockerignore for the ericw-tools commit-image build.
+# Bake in the FULL repo (including .git history — the grader uses it; submodules under
+# 3rdparty/ are real source and MUST stay), dropping only local build artifacts / cruft.
+# build.sh creates build/ and build-tests/ INSIDE the image at build time.
+
+# ── Build outputs / local cruft ──────────────────────────────────────────────
+/build/
+/build-tests/
+build-linux-64/
+**/__pycache__/
+
+# ── Editor / OS noise ────────────────────────────────────────────────────────
+.DS_Store
+*.swp
+*~

@@ -1,0 +1,5 @@
+project: ericw-tools
+target: bspinfo
+cmds:
+  - cmd: /mayhem/bspinfo_fuzzer
+    libfuzzer: true
